@@ -12,6 +12,18 @@ You'll trigger the `hello-agent` workflow you wrote in Step 7 and watch it run l
 - `.github/workflows/hello-agent.md` is committed and pushed to `main`
 - Your browser is open to your practice repository on GitHub
 
+### Configure Copilot authentication
+
+The default Copilot engine needs a repository Actions secret; your local `gh auth login` and the automatically provided `GITHUB_TOKEN` do not supply this credential.
+
+1. With an account that has access to Copilot, [create a fine-grained personal access token](https://github.com/settings/personal-access-tokens/new). Under **Permissions → Account permissions**, set **Copilot Requests** to **Read**.
+2. In your practice repository, open **Settings → Secrets and variables → Actions** and select **New repository secret**.
+3. Name the secret `COPILOT_GITHUB_TOKEN`, paste the token as its value, and save it. Do not commit the token or share it in an issue or log.
+
+If activation reports `None of the following secrets are set: COPILOT_GITHUB_TOKEN`, verify the exact secret name and repository access. Organization secrets must be available to this repository; environment secrets are only available to jobs that specify that environment. After fixing the configuration, rerun the failed job.
+
+See the [Copilot authentication guide](https://github.github.com/gh-aw/reference/auth/#copilot_github_token) for details.
+
 ## Steps
 
 ### 1. Open the Actions tab

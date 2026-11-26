@@ -97,12 +97,11 @@ Full installation docs: [cli.github.com](https://cli.github.com)
 
 You need a **free GitHub account**. If you don't have one yet, create it at [github.com/join](https://github.com/join).
 
-> [!NOTE]
-> You don't need a paid plan. Everything in this workshop works with a free GitHub account.
+You also need access to GitHub Copilot for the workshop's default AI engine. See [Copilot authentication](https://github.github.com/gh-aw/reference/auth/#copilot_github_token) for its requirements.
 
 Authenticate your `gh` CLI now:
 
-> **Why this matters:** Skipping `gh auth login` will cause Step 6 to fail silently — without authentication, your workflow won't have permission to read repository data or post issue comments, and errors may not be obvious.
+> **Why this matters:** The CLI needs authentication to interact with GitHub. This login does not authenticate the AI engine in GitHub Actions; you'll configure that separately in [Step 8](08-run-your-workflow.md).
 
 ```bash
 gh auth login
